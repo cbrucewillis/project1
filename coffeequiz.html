@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coffee quiz</title>
+<style>
+body {
+background-color: brown;
+font-family: Helvetica;
+}
+
+#main {
+width: 80%;
+max-width: 950px;
+border: 1px black solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+
+padding: 5px;
+height: 250px;
+}
+
+#question {
+margin-top: 0;
+border: 1px solid black;
+padding: 5px;
+
+}
+</style>
+
+
+</head>
+<body>
+<div id="main"><!-- open main div -->
+<div id="header"><!-- open header div -->
+<img src="latteartcrop.png" width="100%" />
+
+</div><!-- close header div -->
+<div id="question" >
+<p>We all have those days when we need a good cup of joe. But when we get to the coffee shop, what do we want? Do you need a strong cup of something dark? Do you need something sweet at add a little something more to your day? <br>Coffee has its own personality - find out which one you are!</p>
+</div>
+<form  id="form1" action=" ">
+<div id="question" >
+<p><strong>1. You find a wallet in a store parking lot. There's $40 in it, a credit card and driver's license. You...</strong></p>
+<input type="radio" name="wallet" value="5" />Immediately take it inside to the customer service desk. You'd want someone to do the same for you.<br />
+<input type="radio" name="wallet" value="0" />Try to find the person yourself - they might reward you for returning it.<br />
+<input type="radio" name="wallet" value="10" />Keep the money and return it to the front desk. It's only $40, they'll be grateful to get the card and ID back. Plus, you probably need it more than they do.<br />
+<input type="radio" name="wallet" value="15" />Just keep it. If you don't, someone else will.<br />
+<input type="radio" name="wallet" value="20" />Leave it. You don't want to deal with it.<br />
+</div>
+
+<div id="question" >
+<p><strong>2. At a party you...</strong></p>
+<input type="radio" name="party" value="10" />Hang out with a couple of close friends on the couch.<br />
+<input type="radio" name="party" value="0" />Talk to everyone. You're pretty much the life of this thing.<br />
+<input type="radio" name="party" value="5" />Hit the dance floor. Isn't that the point of a party?<br />
+<input type="radio" name="party" value="15" />Drink a few drinks and get out. Parties are pointless.<br />
+<input type="radio" name="party" value="20" />Enjoy hanging out, but prefer a quiet evening of relaxation.<br />
+</div>
+
+<div id="question" >
+<p><strong>3. You have the chance to go on a vacation. Where do you want to go?</strong></p>
+<input type="radio" name="vac" value="10" />Someplace you've never been with lots of exploring to do and sights to see.<br />
+<input type="radio" name="vac" value="0" />Somewhere relaxing with luxurious amenities.<br />
+<input type="radio" name="vac" value="15" />Someplace that's well-priced and or familiar.<br />
+<input type="radio" name="vac" value="5" />Somewhere adventurous. Let's climb a mountain!<br />
+<input type="radio" name="vac" value="20" />You'd rather stay home and catch up on some well-deserved sleep.<br />
+</div>
+
+<div id="question" >
+<p><strong>4. Your workplace wants to start a charity softball team. You...</strong></p>
+<input type="radio" name="team" value="0" />Sign up immediately. Sounds like fun!<br />
+<input type="radio" name="team" value="10" />Have a lot to do already, but will give it a shot as long as it's for charity.<br />
+<input type="radio" name="team" value="20" />Don't want to do anything else that requires you to further interact with your coworkers.<br />
+<input type="radio" name="team" value="5" />Don't sign up because sports isn't your thing, but will support the team from the sidelines.<br />
+<input type="radio" name="team" value="15" />Sign up. Competition is your thing.<br />
+</div>
+
+<div id="question" >
+<p><strong>5. You have to cook a dish for a family gathering and have no idea where to start. You...</strong></p> 
+<input type="radio" name="food" value="5" />Call up your aunt who always has the best recipes. With her help you think you can make something work.<br />
+<input type="radio" name="food" value="15" />Make it up as you go. If it doesn't turn out well, it's your family's fault for trusting you with something like this.<br />
+<input type="radio" name="food" value="20" />Don't make anything. In fact, maybe it's not worth showing up at all.<br />
+<input type="radio" name="food" value="0" />Order something to pick up on the way. It'll please everyone and you don't have to worry about making something edible.<br />
+<input type="radio" name="food" value="10" />Try a recipe. Maybe you'll learn something.<br />
+</div>
+
+<br />
+<input type="submit" value="Submit">
+</form>
+
+
+<p><strong>Result:</strong></p><span id="grade"></span>
+<p id="grade2"></p>
+</div><!-- close main div -->
+
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+    walletvar = document.getElementsByName("wallet");
+	for(i=0; i<walletvar.length; i++) {
+	   if (walletvar[i].checked) {
+	   wscore = parseInt(walletvar[i].value);
+	   }
+	   }//end for
+	   
+	partyvar = document.getElementsByName("party");
+	   for(i=0; i<partyvar.length; i++) {
+	   if (partyvar[i].checked) {
+	   pscore = parseInt(partyvar[i].value);
+	   }
+	   }//end for
+	   
+	vacvar = document.getElementsByName("vac");
+	   for(i=0; i<vacvar.length; i++) {
+	   if (vacvar[i].checked) {
+	   vscore = parseInt(vacvar[i].value);
+	   }
+	   }//end for
+	   
+
+	teamvar = document.getElementsByName("team");
+	   for(i=0; i<teamvar.length; i++) {
+	   if (teamvar[i].checked) {
+	   tscore = parseInt(teamvar[i].value);
+	   }
+	   }//end for
+	   
+	foodvar = document.getElementsByName("food");
+	   for(i=0; i<foodvar.length; i++) {
+	   if (foodvar[i].checked) {
+	   fscore = parseInt(foodvar[i].value);
+	   }
+	   }//end for
+	
+   
+	   
+	result = wscore + pscore + vscore +tscore +fscore;
+	document.getElementById("grade").innerHTML = result;
+	if (result >=0 & result <=20) {result2 = "You're a frappuccino! You're sweet, sociable and eager-to-please. You often consider yourself the most outgoing person in the room, though not always the most loyal or dedicated.<br /><br /><img src='frappe.jpg' width='300' />"};
+    if (result >=25 & result <=44) {result2 = "You're a latte! You are a dedicated go-getter with a lot to learn and a lot to experience. You're willing to try new things, but don't let anything get in the way of your goals.<br /><br /><img src='latte.png' width='300' />"};
+    if (result >=45 & result <=60) {result2 = "You're tea! Tea is just as caffeinated as you morning coffee, but perhaps more calming and enjoyable. You enjoy the simple things and are the person everyone comes to for advice.<br /><br /><img src='tea.jpg' width='300' />"};
+    if (result >=61 & result <=75) {result2 = "You're black coffee! You are strongly opinionated, but loyal and level-headed. You're not extremely personable, but enjoy the company of close friends. You are also often set in your ways.<br /><br /><img src='black.png' width='300' />"};
+    if (result >= 75) {result2 = "You're an Americano! You're sensitive, and sometimes easily annoyed, but that's because you enjoy solitude and quiet. You are intelligent and driven, though sometimes unsure of yourself and your goals.<br /><br /><img src='americano.jpg' width='300' />"};
+    document.getElementById("grade2").innerHTML = result2; 
+	   
+
+
+return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+
+</script>
+
+
+</body>
+</html>
